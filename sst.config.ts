@@ -1,8 +1,9 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
+import { sst } from 'sst'
+
 export default $config({
   app(input) {
-
     // sst deploy --stage prod
 
     // test-prod-nameofbucket
@@ -22,6 +23,9 @@ export default $config({
     }
   },
   async run() {
-
+    new sst.aws.Function('Api', {
+      url: true,
+      handler: 'index.handler',
+    })
   },
 })
