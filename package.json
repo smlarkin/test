@@ -4,15 +4,17 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "sso": "aws sso login --profile test",
+    "dev": "sst dev",
+    "deloy": "sst deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": "22.12.0",
-    "pnpm": ">=9.15.1"
+    "node": "22.13.0",
+    "pnpm": "9.15.3"
   },
   "volta": {
-    "node": "22.12.0",
-    "pnpm": ">=9.15.1"
+    "node": "22.13.0"
   },
   "packageManager": "pnpm@9.15.1",
   "devDependencies": {

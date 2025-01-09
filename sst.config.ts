@@ -1,7 +1,5 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
-import { sst } from 'sst'
-
 export default $config({
   app(input) {
     // sst deploy --stage prod
@@ -20,12 +18,18 @@ export default $config({
       removal: input?.stage === 'production' ? 'retain' : 'remove',
       protect: ['production'].includes(input?.stage),
       home: 'aws',
+      providers: {
+        aws: {
+          profile: 'development',
+        },
+      },
     }
   },
+
   async run() {
     new sst.aws.Function('Api', {
       url: true,
-      handler: 'index.handler',
+      handler: 'packages/backend/server.handler',
     })
   },
 })
