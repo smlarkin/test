@@ -20,7 +20,7 @@ export default $config({
       home: 'aws',
       providers: {
         aws: {
-          profile: 'development',
+          profile: 'test',
         },
       },
     }
