@@ -23,13 +23,17 @@ export default $config({
           profile: 'test',
         },
       },
-    }
+    };
   },
 
   async run() {
+    const auth = new sst.aws.Auth('Auth', {
+      issuer: 'packages/backend/src/auth.handler',
+    });
+
     new sst.aws.Function('Api', {
       url: true,
       handler: 'packages/backend/server.handler',
-    })
+    });
   },
-})
+});

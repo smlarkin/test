@@ -5,5 +5,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@openauthjs/openauth": "^0.3.6",
+    "hono": "^4.6.16",
+    "install": "^0.13.0",
+    "valibot": "1.0.0-beta.11"
   }
 }
